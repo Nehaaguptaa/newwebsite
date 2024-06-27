@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Christin Deronian - North Hollywood Dentist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<style>
+    /* Mobile First Adjustments */
+header {
+    padding: 1rem 0; /* Increase padding for better spacing on smaller screens */
+}
+
+header .container {
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center; /* Center items vertically */
+    padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+}
+
+.logo, .contact-info {
+    flex: none; /* Prevent items from stretching too much */
+    width: 100%; /* Full width for each item */
+    text-align: center; /* Center align text */
+}
+
+.logo img {
+    max-width: 150px; /* Adjust logo size as needed */
+    height: auto;
+}
+
+header h1 {
+    font-size: 1.5rem; /* Adjust header text size */
+    margin-bottom: 0.5rem; /* Increase space below header text */
+}
+
+header h2 {
+    font-size: 1rem; /* Adjust subheader text size */
+}
+
+.phone, .email {
+    margin-right: 0; /* Remove right margin to conserve space */
+    margin-bottom: 0.5rem; /* Add bottom margin for spacing */
+}
+
+nav ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center; /* Center align navigation items */
+    margin-top: 0.5rem; /* Add top margin for spacing */
+}
+
+nav ul li {
+    margin: 0.5rem 0; /* Adjust margin between navigation items */
+}
+
+nav ul li a {
+    padding: 0.5rem 1rem; /* Adjust padding for touch targets */
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 768px) {
+    header .container {
+        flex-direction: row; /* Revert to horizontal layout for larger screens */
+        justify-content: space-between; /* Space items evenly */
+        padding: 1rem; /* Increase padding for larger screens */
+    }
+
+    .logo, .contact-info {
+        width: auto; /* Adjust width back to auto for flexbox distribution */
+        text-align: left; /* Align text to the left for better readability */
+    }
+
+    .phone, .email {
+        margin-right: 1rem; /* Revert margin for larger screens */
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    nav ul {
+        flex-direction: row; /* Revert to horizontal layout for larger screens */
+        align-items: center; /* Align items to the center */
+        margin-top: 0; /* Remove top margin */
+    }
+
+    nav ul li {
+        margin: 0 0.5rem; /* Adjust horizontal margin */
+    }
+
+    nav ul li a {
+        padding: 0.5rem 1rem; /* Revert padding for larger screens */
+    }
+}
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background:#4169E1;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info {
+    flex: 1;
+    text-align: right;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.phone, .email {
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.phone:hover, .email:hover {
+    color: #D2B48C;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.button:hover {
+    background: #fff;
+    color: #8B4513;
+}
+
+nav ul li a.button {
+    background: #D2B48C;
+    border-radius: 5px;
+}
+
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+#hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.hero-text {
+    position: absolute;
+    z-index: 1;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+section {
+    padding: 2rem 0;
+    background: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#services .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#services .service-card {
+    background: #f5f5dc;
+    padding: 1rem;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+}
+
+#services .service-card:hover {
+    transform: translateY(-5px);
+    background: #eee8aa;
+}
+
+#services .service-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+#services h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#contact a {
+    color: #8B4513;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #8B4513;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer .footer-info p {
+    margin: 0.5rem 0;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+header {
+    background:  #885430;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    flex: 1;
+}
+
+.contact-info {
+    flex: 1;
+    text-align: right;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.phone, .email {
+    margin-right: 1rem;
+}
+
+.phone:hover, .email:hover {
+    color: #D2B48C;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover, nav ul li a.button:hover {
+    background: #fff;
+    color: #8B4513;
+}
+
+nav ul li a.button {
+    background: #D2B48C;
+}
+
+#treatments {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+}
+
+#treatments .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+#treatments h2 {
+    margin-bottom: 2rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+}
+
+
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+#hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.hero-text {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.book-appointment-btn {
+    position: absolute;
+    z-index: 2;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color:  #885430;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.book-appointment-btn:hover {
+    background-color: #D2B48C;
+    transform: translate(-50%, -5%);
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 4rem 0;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.footer-contact, .footer-address {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-contact h3, .footer-address h3 {
+    color: #D2B48C;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact ul li, .footer-address p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+}
+
+
+</style>
+<body>
+
+
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Dr. Christin Deronian</h1>
+               
+            </div>
+            <div class="contact-info">
+        
+                
+            </div>
+            <nav>
+                <ul>
+
+
+                    <li><a href="tel:8187608201" class="phone"><i class="fas fa-phone-alt"></i> 818-760-8201</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#treatments">Treatments</a></li>
+                    <li><a href="https://patient.rocks/PatientForm/patient/Njk4ZjM3NmEtNjNkZC00ZTFhLTg4ZTctMTMwNzQ0">New Patient Forms</a></li>
+                    <li><a href="https://patient.rocks/Dashboard/PatientDashboard/Njk4ZjM3NmEtNjNkZC00ZTFhLTg4ZTctMTMwNzQ0" class="button">Book Appointment</a></li>
+                   
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <img src="https://palermovillagedental.com/wp-content/uploads/2021/11/girl-getting-a-dental-filling.jpg" alt="Smiling Child">
+        <div class="hero-text">
+            <h1>Your own personalized dental care!</h1>
+            <br>
+        </div>
+        
+        <a href="https://patient.rocks/Dashboard/PatientDashboard/Njk4ZjM3NmEtNjNkZC00ZTFhLTg4ZTctMTMwNzQ0" class="book-appointment-btn">Book Appointment Now!</a>
+    </section>
+
+
+    <section id="treatments">
+        <div class="container">
+            <h2>Our Dental Treatments</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/09/Female_Dental_Work_1296x728-header-1296x728.jpg?w=1155&h=1528" alt="Crowns">
+                    <h3>Crowns</h3>
+                    <p>Restore damaged or decayed teeth with natural-looking crowns.</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.ekdantamclinic.com/wp-content/uploads/2023/10/Dental-Veneers.jpg" alt="Veneers">
+                    <h3>Veneers</h3>
+                    <p>Enhance your smile with custom-made porcelain veneers.</p>
+                </div>
+                <div class="card">
+                    <img src="https://eastportdentalaz.com/wp-content/uploads/2022/02/white-tooth-fillings.jpeg" alt="White Fillings">
+                    <h3>White Fillings</h3>
+                    <p>Repair cavities with tooth-colored composite fillings.</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.glassmandentalcare.com/wp-content/uploads/dental-bridge-picture.jpg" alt="Bridges">
+                    <h3>Bridges</h3>
+                    <p>Replace missing teeth with natural-looking dental bridges.</p>
+                </div>
+                <div class="card">
+                    <img src="https://creandental.ie/wp-content/uploads/2020/08/invisible-braces-crean-dental-facial-aesthetics-tralee-m-500x286.jpg" alt="Teeth Whitening">
+                    <h3>Teeth Whitening</h3>
+                    <p>Brighten your smile with professional teeth whitening treatments.</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.interdent.com/gentle-dental/wp-content/uploads/sites/2/2020/04/Dental-Health-is-Important.jpg" alt="Periodontic Health">
+                    <h3>Periodontic Health</h3>
+                    <p>Specialized care for gum diseases and oral health maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-tooth"></i>
+                    <h3>General Dentistry</h3>
+                    <p>Comprehensive dental care for the whole family.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-smile"></i>
+                    <h3>Cosmetic Dentistry</h3>
+                    <p>Enhance your smile with our cosmetic treatments.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-align-center"></i>
+                    <h3>Orthodontics</h3>
+                    <p>Straighten your teeth with our orthodontic solutions.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Periodontics</h3>
+                    <p>Expert care for your gums and supporting structures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to Dr. Christin Deronian - North Hollywood Deronian and Oganesyan DDS. INC, where your dental health is our priority. Our experienced team is dedicated to providing exceptional dental care in a warm and welcoming environment.</p>
+            <p>At our practice, we believe in personalized treatment plans tailored to your unique dental needs. Whether you're visiting us for a routine check-up, cosmetic dentistry, or restorative procedures, we are committed to helping you achieve and maintain a healthy, beautiful smile.</p>
+            <p>We utilize the latest technology and techniques to ensure optimal results and patient comfort. Our goal is to build long-lasting relationships with our patients based on trust and mutual respect.</p>
+            <p>Explore our comprehensive range of services and schedule your appointment today. We look forward to welcoming you to our dental family!</p>
+        </div>
+    </section>
+    
+
+
+   
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Phone: <a href="tel:8187608201">818-760-8201</a></p>
+            <p>Email: <a href="mailto:mystomotologist@gmail.com">mystomotologist@gmail.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+18187608201">(818) 760-8201</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:mystomotologist@gmail.com">mystomotologist@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-address">
+                    <h3>Visit Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Dental St, North Hollywood, CA 91601</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. Christin Deronian - North Hollywood Dentist. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
